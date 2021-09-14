@@ -2,6 +2,10 @@
 {
     public class BackstagePassItem : UpdatableItem
     {
+        public BackstagePassItem(Item Item) : base(Item)
+        {
+        }
+
         public BackstagePassItem(string Name, int SellIn, int Quality) : base(Name, SellIn, Quality)
         {
         }

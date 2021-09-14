@@ -47,7 +47,7 @@ namespace csharp
                 for (var j = 0; j < Items.Count; j++)
                 {
                     System.Console.WriteLine(Items[j]);
-                }
+                } 
                 Console.WriteLine("");
                 app.UpdateQuality();
             }

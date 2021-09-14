@@ -9,14 +9,14 @@ namespace csharp.Factory
         {
             switch (ItemType) { 
                 case EnumItemType.AGED_BRIE:
-                    return new AgedBrieItem(Item.Name, Item.SellIn, Item.Quality);
+                    return new AgedBrieItem(Item);
                 case EnumItemType.BACKSTAGE_PASSES:
-                    return new BackstagePassItem(Item.Name, Item.SellIn, Item.Quality);
+                    return new BackstagePassItem(Item);
                 case EnumItemType.SULFURAS:
-                    return new SulfurasItem(Item.Name, Item.SellIn, Item.Quality);
+                    return new SulfurasItem(Item);
                 case EnumItemType.SIMPLE:
                 default:
-                    return new SimpleItem(Item.Name, Item.SellIn, Item.Quality);  
+                    return new SimpleItem(Item);  
             }
         }
     }

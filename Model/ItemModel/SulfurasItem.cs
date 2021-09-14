@@ -1,7 +1,11 @@
 ﻿namespace csharp.Model.ItemModel
 {
-    public class SulfurasItem :UpdatableItem
+    public class SulfurasItem : UpdatableItem
     {
+        public SulfurasItem(Item Item) : base(Item)
+        {
+        }
+
         public SulfurasItem(string Name, int SellIn, int Quality) :base(Name, SellIn, Quality)
         { 
         }
