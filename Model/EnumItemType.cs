@@ -14,6 +14,8 @@ namespace csharp.Model
         BACKSTAGE_PASSES,
         [Description("Sulfuras")]
         SULFURAS,
+        [Description("Conjured")]
+        CONJURED,
         [Description("Default")]
         SIMPLE
     }
