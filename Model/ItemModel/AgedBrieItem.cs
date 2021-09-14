@@ -29,5 +29,15 @@
                 IncrementQuality();
             }
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is AgedBrieItem &&  base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

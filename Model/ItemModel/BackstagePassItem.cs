@@ -47,5 +47,15 @@
                 IncrementQuality();
             }
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is BackstagePassItem && base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

@@ -7,7 +7,17 @@
         }
 
         public override void Update()
-        { 
+        {
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is SulfurasItem && base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }
