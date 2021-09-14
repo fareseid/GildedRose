@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using System;
 using System.IO;
+using System.Reflection;
 using System.Text;
 
 namespace csharp
@@ -24,8 +25,8 @@ namespace csharp
         }
 
         private string BuildExpectedOutput()
-        {
-            return File.ReadAllText("ApprovalTest.ThirtyDays.received.txt");
+        {  
+            return File.ReadAllText(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"ApprovalTest.ThirtyDays.received.txt"));
         }
     }
 }

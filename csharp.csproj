@@ -65,8 +65,18 @@
     <Compile Include="GildedRose.cs" />
     <Compile Include="GildedRoseTest.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="Model\ItemModel\AgedBrieItem.cs" />
+    <Compile Include="Model\ItemModel\BackstagePassItem.cs" />
+    <Compile Include="Model\ItemModel\SimpleItem.cs" />
+    <Compile Include="Model\ItemModel\SulfurasItem.cs" />
+    <Compile Include="Model\ItemModel\UpdatableItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test\Model\ItemModel\BackstagePassTest.cs" />
+    <Compile Include="Test\Model\ItemModel\AgedBrieItemTest.cs" />
+    <Compile Include="Test\Model\ItemModel\SimpleItemTest.cs" />
+    <Compile Include="Test\Model\ItemModel\SulfurasItemTest.cs" />
+    <Compile Include="Test\Utils\ItemUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -74,6 +84,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApprovalTest.ThirtyDays.received.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

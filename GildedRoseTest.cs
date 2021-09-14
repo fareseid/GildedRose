@@ -26,7 +26,7 @@ namespace csharp
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 39, 1);
+            AssertOnItem(Items[0], 1, 39);
         }
 
         [Test]
@@ -39,7 +39,7 @@ namespace csharp
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 36, -1);
+            AssertOnItem(Items[0], -1, 36);
         }
 
         [Test]
@@ -51,7 +51,7 @@ namespace csharp
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 0, 8);
+            AssertOnItem(Items[0], 8, 0);
         }
 
         [Test]
@@ -62,7 +62,7 @@ namespace csharp
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 2, 9);
+            AssertOnItem(Items[0], 9, 2);
         }
 
         [Test]
@@ -74,7 +74,7 @@ namespace csharp
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 50, 8);
+            AssertOnItem(Items[0], 8, 50);
         }
 
         [Test]
@@ -85,7 +85,7 @@ namespace csharp
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 49, 10);
+            AssertOnItem(Items[0], 10, 49);
         }
 
         [Test]
@@ -96,7 +96,7 @@ namespace csharp
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 2, 10);
+            AssertOnItem(Items[0], 10, 2);
         }
 
         [Test]
@@ -107,7 +107,7 @@ namespace csharp
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 32, 9);
+            AssertOnItem(Items[0], 9, 32);
         }
 
         [Test]
@@ -118,7 +118,7 @@ namespace csharp
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 32, 8);
+            AssertOnItem(Items[0], 8, 32);
         }
 
         [Test]
@@ -129,7 +129,7 @@ namespace csharp
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 33, 4);
+            AssertOnItem(Items[0], 4, 33);
         }
 
         [Test]
@@ -140,7 +140,7 @@ namespace csharp
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 33, 3);
+            AssertOnItem(Items[0], 3, 33);
         }
 
         [Test]
@@ -151,13 +151,13 @@ namespace csharp
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 0, -1);
+            AssertOnItem(Items[0], -1, 0);
         }
 
-        private static void AssertOnItem(Item ActualItem, int ExpectedQuality, int ExpectedSellIn)
+        public static void AssertOnItem(Item ActualItem, int ExpectedSellIn, int ExpectedQuality)
         {
-            AreEqual(ExpectedQuality, ActualItem.Quality);
             AreEqual(ExpectedSellIn, ActualItem.SellIn);
+            AreEqual(ExpectedQuality, ActualItem.Quality);
         }
     }
 }
