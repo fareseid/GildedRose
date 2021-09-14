@@ -59,6 +59,26 @@ namespace csharp.Test.Model
         }
 
         [Test]
+        public void Should_Return_Conjured_If_Name_Contains_Conjured()
+        {
+            string Name = "Conjured";
+
+            EnumItemType ActualItemType = ToEnum(Name);
+
+            AreEqual(EnumItemType.CONJURED, ActualItemType);
+        }
+
+        [Test]
+        public void Should_Return_Conjured_With_Different_Suffix_Name_If_Name_Contains_Conjured()
+        {
+            string Name = "Conjured ignore string after that";
+
+            EnumItemType ActualItemType = ToEnum(Name);
+
+            AreEqual(EnumItemType.CONJURED, ActualItemType);
+        }
+
+        [Test]
         public void Should_Return_Simple_If_Does_Not_Contains_Any_Other_Enum_Description()
         {
             string Name = "I am a simple item";

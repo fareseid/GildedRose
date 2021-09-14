@@ -60,6 +60,23 @@ namespace csharp.Test.Factory
         }
 
         [Test]
+        public void Should_Build_Conjured_Item_If_Enum_Is_Conjured()
+        {
+            EnumItemType ItemType = EnumItemType.CONJURED;
+            Item Item = new Item()
+            {
+                Name = "Conjured",
+                SellIn = 12,
+                Quality = 40
+            };
+
+            UpdatableItem ActualItem = BuildUpdatableItem(ItemType, Item);
+
+            ConjuredItem ExpectedItem = new ConjuredItem("Conjured", 12, 40);
+            AreEqual(ExpectedItem, ActualItem);
+        }
+
+        [Test]
         public void Should_Build_Simple_Item_If_Enum_Is_Simple()
         {
             EnumItemType ItemType = EnumItemType.SIMPLE;

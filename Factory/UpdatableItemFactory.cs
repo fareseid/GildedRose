@@ -14,6 +14,8 @@ namespace csharp.Factory
                     return new BackstagePassItem(Item);
                 case EnumItemType.SULFURAS:
                     return new SulfurasItem(Item);
+                case EnumItemType.CONJURED:
+                    return new ConjuredItem(Item);
                 case EnumItemType.SIMPLE:
                 default:
                     return new SimpleItem(Item);  
