@@ -1,4 +1,6 @@
-﻿namespace csharp.Model.ItemModel
+﻿using System;
+
+namespace csharp.Model.ItemModel
 {
     public abstract class UpdatableItem
     {
@@ -56,6 +58,19 @@
         protected void ResetQualityToFiftyIfHigher()
         {
             Item.Quality = (Item.Quality > 50) ? 50 : Item.Quality;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is UpdatableItem that &&
+                this.Item.Name.Equals(that.Item.Name) &&
+                this.Item.SellIn.Equals(that.Item.SellIn) &&
+                this.Item.Quality.Equals(that.Item.Quality);
+        }
+
+        public override int GetHashCode()
+        {
+            return Tuple.Create(Item.Name, Item.SellIn, Item.Quality).GetHashCode(); 
         }
     }
 }

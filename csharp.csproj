@@ -62,9 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApprovalTest.cs" />
+    <Compile Include="Factory\UpdatableItemFactory.cs" />
     <Compile Include="GildedRose.cs" />
     <Compile Include="GildedRoseTest.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="Model\EnumItemType.cs" />
     <Compile Include="Model\ItemModel\AgedBrieItem.cs" />
     <Compile Include="Model\ItemModel\BackstagePassItem.cs" />
     <Compile Include="Model\ItemModel\SimpleItem.cs" />
@@ -72,11 +74,14 @@
     <Compile Include="Model\ItemModel\UpdatableItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test\Factory\UpdatableItemFactoryTest.cs" />
+    <Compile Include="Test\Model\EnumItemTypeTest.cs" />
     <Compile Include="Test\Model\ItemModel\BackstagePassTest.cs" />
     <Compile Include="Test\Model\ItemModel\AgedBrieItemTest.cs" />
     <Compile Include="Test\Model\ItemModel\SimpleItemTest.cs" />
     <Compile Include="Test\Model\ItemModel\SulfurasItemTest.cs" />
     <Compile Include="Test\Utils\ItemUtils.cs" />
+    <Compile Include="Utils\ListExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
