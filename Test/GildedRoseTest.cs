@@ -16,7 +16,7 @@ namespace csharpTest
 
             App.UpdateQuality();
 
-            AreEqual("foo", Items[0].Name);
+            AreEqual("foo", App.Get(0).Name);
         }
 
         [TestMethod]
@@ -27,7 +27,7 @@ namespace csharpTest
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 1, 39);
+            AssertOnItem(App.Get(0), 1, 39);
         }
 
         [TestMethod]
@@ -40,7 +40,7 @@ namespace csharpTest
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], -1, 36);
+            AssertOnItem(App.Get(0), -1, 36);
         }
 
         [TestMethod]
@@ -52,7 +52,7 @@ namespace csharpTest
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 8, 0);
+            AssertOnItem(App.Get(0), 8, 0);
         }
 
         [TestMethod]
@@ -63,7 +63,7 @@ namespace csharpTest
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 9, 2);
+            AssertOnItem(App.Get(0), 9, 2);
         }
 
         [TestMethod]
@@ -75,7 +75,7 @@ namespace csharpTest
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 8, 50);
+            AssertOnItem(App.Get(0), 8, 50);
         }
 
         [TestMethod]
@@ -86,7 +86,7 @@ namespace csharpTest
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 10, 49);
+            AssertOnItem(App.Get(0), 10, 49);
         }
 
         [TestMethod]
@@ -97,7 +97,7 @@ namespace csharpTest
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 10, 2);
+            AssertOnItem(App.Get(0), 10, 2);
         }
 
         [TestMethod]
@@ -108,7 +108,7 @@ namespace csharpTest
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 9, 32);
+            AssertOnItem(App.Get(0), 9, 32);
         }
 
         [TestMethod]
@@ -119,7 +119,7 @@ namespace csharpTest
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 8, 32);
+            AssertOnItem(App.Get(0), 8, 32);
         }
 
         [TestMethod]
@@ -130,7 +130,7 @@ namespace csharpTest
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 4, 33);
+            AssertOnItem(App.Get(0), 4, 33);
         }
 
         [TestMethod]
@@ -141,7 +141,7 @@ namespace csharpTest
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], 3, 33);
+            AssertOnItem(App.Get(0), 3, 33);
         }
 
         [TestMethod]
@@ -152,7 +152,7 @@ namespace csharpTest
 
             App.UpdateQuality();
 
-            AssertOnItem(Items[0], -1, 0);
+            AssertOnItem(App.Get(0), -1, 0);
         }
 
         public static void AssertOnItem(Item ActualItem, int ExpectedSellIn, int ExpectedQuality)
