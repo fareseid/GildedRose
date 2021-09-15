@@ -1,14 +1,14 @@
 ﻿using csharp.Model.ItemModel;
-using NUnit.Framework;
-using static csharp.Test.Utils.ItemUtils;
-using static NUnit.Framework.Assert;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using static csharpTest.Utils.ItemUtils;
+using static Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
-namespace csharp.Test.Model.ItemModel
+namespace csharpTest.Model.ItemModel
 {
-    [TestFixture]
+    [TestClass]
     public class SulfurasItemTest
     {
-        [Test]
+        [TestMethod]
         public void Should_Not_Modify_Name()
         {
             SulfurasItem Item = new SulfurasItem("Sulfuras", 0, 0);
@@ -18,7 +18,7 @@ namespace csharp.Test.Model.ItemModel
             AreEqual("Sulfuras", Item.GetName());
         }    
 
-        [Test]
+        [TestMethod]
         public void Should_Not_Modify_SellIn_Nor_Quality_If_Sulfuras()
         {
             SulfurasItem Item = new SulfurasItem("Sulfuras", 10, 49); 

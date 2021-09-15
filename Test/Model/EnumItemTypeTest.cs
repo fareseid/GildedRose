@@ -1,14 +1,14 @@
 ﻿using csharp.Model;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using static Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using static csharp.Model.EnumUtils;
-using static NUnit.Framework.Assert;
 
-namespace csharp.Test.Model
+namespace csharpTest.Model
 {
-    [TestFixture]
+    [TestClass]
     public class EnumItemTypeTest
     {
-        [Test]
+        [TestMethod]
         public void Should_Return_AgedBrie_If_Name_Contains_AgedBrie()
         {
             string Name = "Aged Brie";
@@ -18,7 +18,7 @@ namespace csharp.Test.Model
             AreEqual(EnumItemType.AGED_BRIE, ActualItemType);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Return_BackstagePasses_If_Name_Contains_BackstagePasses()
         {
             string Name = "Backstage passes to a TAFKAL80ETC concert";
@@ -28,7 +28,7 @@ namespace csharp.Test.Model
             AreEqual(EnumItemType.BACKSTAGE_PASSES, ActualItemType);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Return_BackstagePasses_With_Different_Concert_Name_If_Name_Contains_BackstagePasses()
         {
             string Name = "Backstage passes ignore string after that";
@@ -38,7 +38,7 @@ namespace csharp.Test.Model
             AreEqual(EnumItemType.BACKSTAGE_PASSES, ActualItemType);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Return_Sulfuras_If_Name_Contains_Sulfuras()
         {
             string Name = "Sulfuras, Hand of Ragnaros";
@@ -48,7 +48,7 @@ namespace csharp.Test.Model
             AreEqual(EnumItemType.SULFURAS, ActualItemType);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Return_Sulfuras_With_Different_Suffix_Name_If_Name_Contains_Sulfuras()
         {
             string Name = "Sulfuras ignore string after that";
@@ -58,7 +58,7 @@ namespace csharp.Test.Model
             AreEqual(EnumItemType.SULFURAS, ActualItemType);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Return_Conjured_If_Name_Contains_Conjured()
         {
             string Name = "Conjured";
@@ -68,7 +68,7 @@ namespace csharp.Test.Model
             AreEqual(EnumItemType.CONJURED, ActualItemType);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Return_Conjured_With_Different_Suffix_Name_If_Name_Contains_Conjured()
         {
             string Name = "Conjured ignore string after that";
@@ -78,7 +78,7 @@ namespace csharp.Test.Model
             AreEqual(EnumItemType.CONJURED, ActualItemType);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Return_Simple_If_Does_Not_Contains_Any_Other_Enum_Description()
         {
             string Name = "I am a simple item";

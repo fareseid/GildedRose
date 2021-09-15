@@ -1,19 +1,21 @@
-﻿using csharp.Model;
+﻿using csharp;
+using csharp.Model;
 using csharp.Model.ItemModel;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using static csharp.Factory.UpdatableItemFactory;
-using static NUnit.Framework.Assert;
+using static Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
-namespace csharp.Test.Factory
-{ 
-    [TestFixture]
+namespace csharpTest.Factory
+{
+    [TestClass]
     public class UpdatableItemFactoryTest
     {
-        [Test]
+        [TestMethod]
         public void Should_Build_AgedBrie_Item_If_Enum_Is_AgedBrie()
         {
-            EnumItemType ItemType = EnumItemType.AGED_BRIE; 
-            Item Item = new Item() { 
+            EnumItemType ItemType = EnumItemType.AGED_BRIE;
+            Item Item = new Item()
+            {
                 Name = "Aged Brie",
                 SellIn = 12,
                 Quality = 40
@@ -21,11 +23,11 @@ namespace csharp.Test.Factory
 
             UpdatableItem ActualItem = BuildUpdatableItem(ItemType, Item);
 
-            AgedBrieItem ExpectedItem = new AgedBrieItem("Aged Brie", 12, 40); 
+            AgedBrieItem ExpectedItem = new AgedBrieItem("Aged Brie", 12, 40);
             AreEqual(ExpectedItem, ActualItem);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Build_BackstagePass_Item_If_Enum_Is_BackstagePass()
         {
             EnumItemType ItemType = EnumItemType.BACKSTAGE_PASSES;
@@ -42,7 +44,7 @@ namespace csharp.Test.Factory
             AreEqual(ExpectedItem, ActualItem);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Build_Sulfuras_Item_If_Enum_Is_Sulfuras()
         {
             EnumItemType ItemType = EnumItemType.SULFURAS;
@@ -59,7 +61,7 @@ namespace csharp.Test.Factory
             AreEqual(ExpectedItem, ActualItem);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Build_Conjured_Item_If_Enum_Is_Conjured()
         {
             EnumItemType ItemType = EnumItemType.CONJURED;
@@ -76,7 +78,7 @@ namespace csharp.Test.Factory
             AreEqual(ExpectedItem, ActualItem);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Build_Simple_Item_If_Enum_Is_Simple()
         {
             EnumItemType ItemType = EnumItemType.SIMPLE;

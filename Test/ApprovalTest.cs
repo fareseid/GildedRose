@@ -1,17 +1,17 @@
-﻿using ApprovalTests.Reporters;
-using NUnit.Framework;
+﻿using csharp;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using static Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
-namespace csharp
+namespace csharpTest.ApprovalTest
 {
-    [UseReporter(typeof(DiffReporter))]
-    [TestFixture]
+    [TestClass]
     public class ApprovalTest
     {
-        [Test]
+        [TestMethod]
         public void Should_Print_Result_Over_Thirty_Days()
         {
             StringBuilder ActualOutput = new StringBuilder();
@@ -21,7 +21,7 @@ namespace csharp
             Program.Main(new string[] { });
 
             string ExpectedOutput = BuildExpectedOutput();
-            Assert.AreEqual(ExpectedOutput, ActualOutput.ToString());
+            AreEqual(ExpectedOutput, ActualOutput.ToString());
         }
 
         private string BuildExpectedOutput()
