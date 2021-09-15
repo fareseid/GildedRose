@@ -1,14 +1,14 @@
 ﻿using csharp.Model.ItemModel;
-using NUnit.Framework;
-using static csharp.Test.Utils.ItemUtils;
-using static NUnit.Framework.Assert;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using static csharpTest.Utils.ItemUtils;
+using static Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
-namespace csharp.Test.Model.ItemModel
+namespace csharpTest.Model.ItemModel
 {
-    [TestFixture]
+    [TestClass]
     public class AgedBrieItemTest
     {
-        [Test]
+        [TestMethod]
         public void Should_Not_Modify_Name()
         {
             AgedBrieItem Item = new AgedBrieItem("Aged Brie", 0, 0);
@@ -16,9 +16,9 @@ namespace csharp.Test.Model.ItemModel
             Item.Update();
 
             AreEqual("Aged Brie", Item.GetName());
-        } 
+        }
 
-        [Test]
+        [TestMethod]
         public void Should_Increment_Quality_If_AgedBrie()
         {
             AgedBrieItem Item = new AgedBrieItem("Aged Brie", 10, 1);
@@ -28,7 +28,7 @@ namespace csharp.Test.Model.ItemModel
             AssertOnUpdatableItem(Item, 9, 2);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Not_Increment_Quality_More_Than_50()
         {
             AgedBrieItem Item = new AgedBrieItem("Aged Brie", 10, 49);
@@ -37,6 +37,6 @@ namespace csharp.Test.Model.ItemModel
             Item.Update();
 
             AssertOnUpdatableItem(Item, 8, 50);
-        }       
+        }
     }
 }

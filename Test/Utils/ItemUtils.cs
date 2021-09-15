@@ -1,7 +1,7 @@
 ﻿using csharp.Model.ItemModel;
-using static NUnit.Framework.Assert;
+using static Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
-namespace csharp.Test.Utils
+namespace csharpTest.Utils
 {
     public static class ItemUtils
     {

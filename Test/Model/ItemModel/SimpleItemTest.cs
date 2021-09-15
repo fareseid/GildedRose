@@ -1,14 +1,14 @@
 ﻿using csharp.Model.ItemModel;
-using NUnit.Framework;
-using static csharp.Test.Utils.ItemUtils;
-using static NUnit.Framework.Assert;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using static csharpTest.Utils.ItemUtils;
+using static Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
-namespace csharp.Test.Model.ItemModel
+namespace csharpTest.Model.ItemModel
 {
-    [TestFixture]
+    [TestClass]
     public class SimpleItemTest
     { 
-        [Test]
+        [TestMethod]
         public void Should_Not_Modify_Name()
         { 
             SimpleItem Item = new SimpleItem("foo", 0, 0);
@@ -18,7 +18,7 @@ namespace csharp.Test.Model.ItemModel
             AreEqual("foo", Item.GetName());
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Decrement_SellIn_And_Quality()
         { 
             SimpleItem Item = new SimpleItem("SimpleItem", 2, 40); 
@@ -28,7 +28,7 @@ namespace csharp.Test.Model.ItemModel
             AssertOnUpdatableItem(Item, 1, 39);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Degrade_Quality_Twice_As_Fast_When_SellIn_Passed()
         {
             SimpleItem Item = new SimpleItem("SimpleItem", 2, 40);
@@ -40,7 +40,7 @@ namespace csharp.Test.Model.ItemModel
             AssertOnUpdatableItem(Item, -1, 36);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Not_Decrement_Quality_When_Quality_Is_Zero()
         { 
             SimpleItem Item = new SimpleItem("SimpleItem", 10, 1);
