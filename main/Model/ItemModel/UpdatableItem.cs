@@ -6,14 +6,6 @@ namespace csharp.Model.ItemModel
     {
         private readonly Item Item;
 
-        // This constructor was added since Program.cs is expecting the modification to be done on the Item that it owns.
-        //  It might have been more interesting to recreate the object since we are not the owner of this object
-        //  and hence should not modify it directly
-        public UpdatableItem(Item Item)
-        {
-            this.Item = Item;
-        }
-
         public UpdatableItem(string Name, int SellIn, int Quality) {
             Item = new Item
             {
@@ -24,6 +16,11 @@ namespace csharp.Model.ItemModel
         }
 
         public abstract void Update();
+
+        public Item GetUnderlyingItem()
+        {
+            return Item;
+        }
 
         public string GetName()
         {

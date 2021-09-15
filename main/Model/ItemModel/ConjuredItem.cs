@@ -1,11 +1,7 @@
 ﻿namespace csharp.Model.ItemModel
 {
     public class ConjuredItem : UpdatableItem
-    {
-        public ConjuredItem(Item Item) : base(Item)
-        {
-        }
-        
+    {        
         public ConjuredItem(string Name, int SellIn, int Quality) : base(Name, SellIn, Quality)
         {
         }

@@ -2,10 +2,6 @@
 {
     public class SimpleItem : UpdatableItem
     {
-        public SimpleItem(Item Item) : base(Item)
-        {
-        }
-
         public SimpleItem(string Name, int SellIn, int Quality) : base(Name,SellIn,Quality) { 
         }
 

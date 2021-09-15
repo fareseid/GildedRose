@@ -46,7 +46,7 @@ namespace csharp
                 Console.WriteLine("name, sellIn, quality");
                 for (var j = 0; j < Items.Count; j++)
                 {
-                    System.Console.WriteLine(Items[j]);
+                    System.Console.WriteLine(app.Get(j));
                 } 
                 Console.WriteLine("");
                 app.UpdateQuality();
